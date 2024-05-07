@@ -57,6 +57,15 @@ function manejarEjercicio4 () {
         "papel",
         "tijera",
     ];
-    const maquina = null;
+    const indice = Math.floor(Math.random() * opciones.length);
+    const seleccionMaquina = opciones[indice];
+    console.log("seleccionMaquina: ", seleccionMaquina);
+    const opcionesUsuario = d.querySelectorAll (".ppt");
+    opcionesUsuario.forEach ((opcion)=>{
+        opcion.addEventListener("click",()=>{
+            const seleccionUsuario = opcion.textContent
+            console.log("seleccionUsuario: ", seleccionUsuario);
+        })
+    })
 }
 
