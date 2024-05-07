@@ -2,6 +2,7 @@
 const d = document;
 d.addEventListener("DOMContentLoaded", ()=>{
     manejarEjercicio1();
+    manejarEjercicio2();
     manejarEjercicio3();
     manejarEjercicio4();
 })
@@ -29,6 +30,20 @@ function manejarEjercicio1 () {
 // RESET se utiliza para limpiar el formulario automaticamente
     $form1.reset ();
 })
+}
+
+function manejarEjercicio2() {
+    const modal = new bootstrap.Modal("#modal1");
+    const $listo = d.getElementById("listo");
+    $listo.addEventListener("click", ()=>{
+        const $texto = d.getElementById("texto");
+        if ($texto.value != "") {
+            const $textoIngresado = d.getElementById("textoIngresado");
+            $textoIngresado.textContent = `El texto ingresado es: ${$texto.value}`;
+            modal.hide();
+            $texto.value = "";
+        }
+    })
 }
 
 function manejarEjercicio3 () {
